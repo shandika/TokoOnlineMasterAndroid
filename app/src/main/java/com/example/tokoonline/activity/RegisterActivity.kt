@@ -67,7 +67,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         pb.visibility = View.VISIBLE
-        ApiConfig.instanceRetrofit.register(edt_nama.text.toString(), edt_email.text.toString(), edt_password.text.toString()).enqueue(object : Callback<ResponModel>{
+        ApiConfig.instanceRetrofit.register(edt_nama.text.toString(), edt_email.text.toString(), edt_phone.text.toString(), edt_password.text.toString()).enqueue(object : Callback<ResponModel>{
 
             override fun onFailure(call: Call<ResponModel>, t: Throwable) {
                 pb.visibility = View.GONE
@@ -79,6 +79,7 @@ class RegisterActivity : AppCompatActivity() {
                 val respon = response.body()!!
                 if (respon.success == 1) {
                     s.setStatusLogin(true)
+                    s.setUser(respon.user)
                     val intent = Intent(this@RegisterActivity, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
