@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tokoonline" >
+    package="com.example.tokoonline">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TokoOnline" >
-        <activity
-            android:name=".activity.MainA2ctivity"
-            android:label="@string/title_activity_main_a2ctivity" >
-        </activity>
-        <activity
-            android:name=".activity.Contoh"
-            android:label="@string/title_activity_contoh" >
-        </activity>
-        <activity
-            android:name=".activity.Main2Activity"
-            android:label="@string/title_activity_main2" />
-        <activity android:name=".MainActivity" >
+        android:theme="@style/Theme.TokoOnline">
+        <activity android:name=".activity.BaruActivity"></activity>
+
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.LoginActivity"></activity>
+        <activity android:name=".activity.MasukActivity" />
+        <activity android:name=".activity.RegisterActivity" />
     </application>
 
 </manifest>
